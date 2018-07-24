@@ -1,0 +1,45 @@
+<!-- -->
+<ion-content padding class="animated fadeIn login auth-page">
+  <div class="login-content">
+    <!-- Logo -->
+    <div padding-horizontal text-center class="animated fadeInDown">
+      <div class="logo"></div>
+    </div>
+    <br><br><br>
+    <!-- Login form (click)="goLogin() -->
+    <form text-center class="list-form" [formGroup]="login_form" (ngSubmit)="goLogin()">
+      <ion-item>
+        <ion-label floating>
+          <ion-icon name="key" item-start class="text-white"></ion-icon>
+          Código
+        </ion-label>
+
+        <ion-input type="number"
+        ng-change="javascript: if (this.value.length > this.maxLength &&
+                                   this.value.length < this.minLength)
+                      this.value = this.value.slice(0, this.maxLength);"
+        formControlName="code"
+        maxlength="10"
+        minlength="10"
+        required
+        clearInput>
+      </ion-input>
+
+    </ion-item>
+    <br>
+    <ion-grid text-center>
+      <ion-row justify-content-center>
+        <ion-col col-8>
+          <button ion-button icon-start full
+                  color="light" type="submit"
+                  [disabled]="logging"
+                  [disabled]="!login_form.valid" tappable>
+            <ion-icon name="log-in"></ion-icon>
+            Enviar
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+</div>
+</ion-content>

@@ -1,0 +1,14 @@
+[
+  {
+    "plu":"0123456789",
+    "name":"Steven",
+    "age":30,
+    "desc":"Embedded System Enginner"
+  },
+  {
+    "plu":"9876543210",
+    "name":"Ariel",
+    "age":24,
+    "desc":"Embedded System Enginner"
+  }
+]

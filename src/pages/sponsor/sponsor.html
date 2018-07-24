@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Summit Administrador
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding class="sponsor-page">
+  <h1 text-center margin-top >
+    <ion-icon name="contact" item-start class="text-white"></ion-icon>
+    <strong class="text-primary">{{currName}}</strong>
+  </h1>
+  <ion-grid text-center class="sponsor-menu">
+    <ion-row justify-content-center>
+      <ion-col col-6>
+        <button ion-button full color="light" (click)="goScan()">
+          <ion-icon class="icon-padding" name="barcode" item-start></ion-icon>
+          Escanear
+        </button>
+      </ion-col>
+    </ion-row>
+    <br><br>
+    <ion-row justify-content-center>
+      <ion-col col-6>
+        <button ion-button full color="light" (click)="goGuests()">
+          <ion-icon class="icon-padding" name="contacts" item-start></ion-icon>
+          Invitados
+        </button>
+      </ion-col>
+    </ion-row>
+    <br><br>
+    <ion-row justify-content-center>
+      <ion-col col-6>
+        <button ion-button full color="light" (click)="goVisitors()">
+          <ion-icon class="icon-padding" name="clipboard" item-start></ion-icon>
+          Visitas
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

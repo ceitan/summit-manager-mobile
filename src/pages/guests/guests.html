@@ -1,0 +1,75 @@
+<!-- -->
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Summit Invitados
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content class="auth-page">
+  <div class="login-content">
+
+    <ion-grid>
+      <ion-row justify-content-between>
+        <ion-col col-3>
+          <button ion-button icon-start full color="light" type="submit"
+          (click)="goAdd()" tappable>
+            <ion-icon name="add"></ion-icon>
+            Agregar
+          </button>
+        </ion-col>
+        <ion-col col-6>
+          <ion-searchbar placeholder="Buscar"
+                         showCancelButton
+                         color="danger"
+                         (ionInput)="filterItems($event)">
+          </ion-searchbar>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <br><br>
+    <ion-grid  class="gridLayout">
+      <ion-row text-center>
+        <ion-col col-2>
+          Nombre
+        </ion-col>
+        <ion-col col-2>
+          Correo
+        </ion-col>
+        <ion-col col-2>
+          Teléfono
+        </ion-col>
+        <ion-col col-2>
+          Empresa
+        </ion-col>
+        <ion-col col-2>
+          Puesto
+        </ion-col>
+        <ion-col col-2>
+          Estado
+        </ion-col>
+      </ion-row>
+      <ion-row *ngFor="let item of items" >
+        <ion-col col-2>
+          {{item.Name}}
+        </ion-col>
+        <ion-col col-2>
+          {{item.Email}}
+        </ion-col>
+        <ion-col col-2>
+          {{item.Phone}}
+        </ion-col>
+        <ion-col col-2>
+          {{item.Company}}
+        </ion-col>
+        <ion-col col-2>
+          {{item.Job}}
+        </ion-col>
+        <ion-col col-2>
+          {{item.Status}}
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+  </div>
+</ion-content>
