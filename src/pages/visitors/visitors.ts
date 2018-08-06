@@ -5,7 +5,7 @@ import { ViewChild } from '@angular/core';
 import { Navbar } from 'ionic-angular';
 import { Platform } from 'ionic-angular';
 import { ScreenOrientation } from '@ionic-native/screen-orientation';
-import { Toast } from '@ionic-native/toast';
+//import { Toast } from '@ionic-native/toast';
 
 import { DataServiceProvider } from '../../providers/data-service/data-service';
 
@@ -27,8 +27,7 @@ export class VisitorsPage {
     public navParams: NavParams,
     public platform: Platform,
     public dataService: DataServiceProvider,
-    private screenOrientation: ScreenOrientation,
-    private toast: Toast) {
+    private screenOrientation: ScreenOrientation) {
       // get current
       console.log(this.screenOrientation.type);
       // set to landscape

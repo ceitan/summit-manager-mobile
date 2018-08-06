@@ -5,7 +5,7 @@ import {Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { ScreenOrientation } from '@ionic-native/screen-orientation';
 import { Platform } from 'ionic-angular';
 import { AppMinimize } from '@ionic-native/app-minimize';
-import { BackgroundMode } from '@ionic-native/background-mode';
+//import { BackgroundMode } from '@ionic-native/background-mode';
 import { Storage } from '@ionic/storage';
 import { Toast } from '@ionic-native/toast';
 
@@ -30,7 +30,6 @@ export class HomePage {
     public dataService: DataServiceProvider,
     private screenOrientation: ScreenOrientation,
     private formBuilder: FormBuilder,
-    private backgroundMode: BackgroundMode,
     private storage: Storage,
     private appMinimize: AppMinimize,
     private toast: Toast) {
@@ -43,7 +42,7 @@ export class HomePage {
         code: ['', Validators.required]
       });
 
-      let backAction =  platform.registerBackButtonAction(() => {
+      platform.registerBackButtonAction(() => {
         this.appMinimize.minimize();
         //this.navCtrl.pop();
       },1);
@@ -85,6 +84,14 @@ export class HomePage {
       this.logging = false;
     }, (error) => {
       console.log("An error ocurred:" + error.status);
+      if(error.statusText  === "El codigo es invalido") {
+        console.log("ERROR:" + error.statusText);
+        this.toast.show('Código inválido', '5000', 'center').subscribe(
+          toast => {
+            console.log(toast);
+          }
+        );
+      }
     });
   }
 

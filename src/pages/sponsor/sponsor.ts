@@ -87,6 +87,14 @@ export class SponsorPage {
           );
         }, (error) => {
           console.log("An error ocurred:" + error.status);
+          if(error.statusText === "La persona ya ha visitado el stand") {
+            console.log("ERROR:" + error.statusText);
+            this.toast.show('Persona ya registrada', '5000', 'center').subscribe(
+              toast => {
+                console.log(toast);
+              }
+            );
+          }
         });
       }, (err) => {
         this.scanning = false;
